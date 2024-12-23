@@ -1,0 +1,42 @@
+[tool.poetry]
+
+name = "enka_card"
+
+version = "1.0"
+
+description = "A python-based card generation script that allows users to generate Enka.Network cards with ease."
+
+authors = ["None"]
+
+
+
+readme = 'README.md'  
+
+
+
+repository = "https://github.com/Nubuki-all/enka-card"
+
+homepage = "https://github.com/Nubuki-all/enka-card"
+
+
+
+[tool.poetry.dependencies]
+
+python = "^3.10"
+
+enkanetwork.py = "*"
+
+pillow = "*"
+
+pydantic = "*"
+
+requests = "*"
+
+
+
+
+[build-system]
+
+requires = ["poetry-core>=1.0.0"]
+
+build-backend = "poetry.core.masonry.api"
