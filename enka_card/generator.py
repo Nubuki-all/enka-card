@@ -57,8 +57,7 @@ def generate_image(
 
     """ FIRST TRIMESTER """
     character_art = open_image(
-       
-       import os path=f"{dir}/attributes/Genshin/Gacha/{character.image.banner.filename}.png",
+       path=f"{dir}/attributes/Genshin/Gacha/{character.image.banner.filename}.png",
         asset_url=character.image.banner.url,
     )
     character_art = scale_image(character_art, fixed_percent=90)
