@@ -24,7 +24,7 @@ homepage = "https://github.com/Nubuki-all/enka-card"
 
 python = "^3.10"
 
-"enkanetwork.py" = "*"
+"enkanetworkv2.py" = "*"
 
 pillow = "*"
 
