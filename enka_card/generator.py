@@ -36,7 +36,7 @@ def generate_image(
     BEIGE = (245, 222, 179)
 
     """ BACKGROUND SETUP """
-    background = open_image("{dir}/attributes/Assets/default_enka_card.png")
+    background = open_image(f"{dir}/attributes/Assets/default_enka_card.png")
 
     background_rgb = {
         "Pyro": (186, 140, 131),
@@ -66,7 +66,7 @@ def generate_image(
 
     foreground.paste(character_art, (0, 0), character_art)
 
-    character_shade = open_image("{dir}/attributes/Assets/enka_character_shade.png")
+    character_shade = open_image(f"{dir}/attributes/Assets/enka_character_shade.png")
     foreground.paste(character_shade, (0, 0), character_shade)
 
     w = int(draw.textlength(f"{character.name}", font=get_font("normal", 30)))
@@ -134,7 +134,7 @@ def generate_image(
         font=get_font("normal", 23),
     )
 
-    friendship_icon = open_image("{dir}/attributes/UI/COMPANIONSHIP.png")
+    friendship_icon = open_image(f"{dir}/attributes/UI/COMPANIONSHIP.png")
     friendship_icon = scale_image(friendship_icon, fixed_height=45)
     foreground.paste(friendship_icon, (34, 108), friendship_icon)
     draw.text(
@@ -145,12 +145,12 @@ def generate_image(
     )
 
     """ Constellations Section """
-    c_overlay = open_image("{dir}/attributes/Assets/enka_constellation_overlay.png")
+    c_overlay = open_image(f"{dir}/attributes/Assets/enka_constellation_overlay.png")
     c_overlay = scale_image(c_overlay, fixed_height=75)
     ImageDraw.Draw(c_overlay).ellipse(
         (15, 15, 59, 59), fill=(50, 50, 50, 150), outline=background_rgb, width=2
     )
-    lock = open_image("{dir}/attributes/UI/LOCKED.png", resize=(20, 25))
+    lock = open_image(f"{dir}/attributes/UI/LOCKED.png", resize=(20, 25))
 
     constellation_starting_index = 160
     for index, constellation in enumerate(character.constellations):
@@ -591,7 +591,7 @@ def generate_image(
     )
 
     flower_of_life = open_image(
-        "{dir}/attributes/Assets/flower_of_life_icon.png", resize=(35, 35)
+        f"{dir}/attributes/Assets/flower_of_life_icon.png", resize=(35, 35)
     )
     foreground.paste(flower_of_life, (562, 555), flower_of_life)
 

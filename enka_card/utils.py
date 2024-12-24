@@ -82,14 +82,14 @@ def scale_image(
 def get_font(font: Literal["normal"], size: int) -> ImageFont.FreeTypeFont:
     """Helper method to get a font."""
     return {
-        "normal": ImageFont.truetype("{dir}/attributes/Fonts/JA-JP.TTF", size),
+        "normal": ImageFont.truetype(f"{dir}/attributes/Fonts/JA-JP.TTF", size),
         # Insert other fonts you'd like to use here, if any
-    }.get(font, ImageFont.truetype("{dir}/attributes/Fonts/JA-JP.TTF", size))
+    }.get(font, ImageFont.truetype(f"{dir}/attributes/Fonts/JA-JP.TTF", size))
 
 
 def fade_character_art(im: Image) -> Image:
     # Load mask from attributes
-    mask = Image.open("{dir}/attributes/Assets/enka_character_mask.png").convert("L")
+    mask = Image.open(f"{dir}/attributes/Assets/enka_character_mask.png").convert("L")
     mask = mask.resize((im.size[0], im.size[1]), Image.NEAREST)
 
     # Extract alpha channel from original image
@@ -108,7 +108,7 @@ def fade_character_art(im: Image) -> Image:
 
 def fade_asset_icon(im: Image, _type: Literal["artifact"]) -> Image:
     mask_fp = {
-        "artifact": "{dir}/attributes/Assets/artifact_mask.png",
+        "artifact": f"{dir}/attributes/Assets/artifact_mask.png",
         # Insert other masks you'd like to use here, if any
     }.get(_type)
 
