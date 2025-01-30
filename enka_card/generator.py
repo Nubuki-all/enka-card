@@ -24,7 +24,7 @@ dir = os.path.dirname(__file__)
 
 
 def generate_image(
-    data: EnkaNetworkResponse, character: CharacterInfo, locale: Language = Language.EN
+    data: EnkaNetworkResponse, character: CharacterInfo, locale: Language = Language.EN, hide_uid: bool = False
 ):
     """Create language-specific asset-getter"""
     asset_reference = Assets(lang=locale)
@@ -99,7 +99,7 @@ def generate_image(
 
     draw.text(
         (38, info_gap + 325),
-        f"UID: {data.uid}",
+        f"UID: {data.uid if not hide_uid else '[Hidden]'}",
         font=get_font("normal", 18),
     )
 
